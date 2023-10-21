@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "6250da39-78bc-49b1-9ee9-c0e355f88d25",
+		"name": "Connect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27640959"
+	},
+	"item": [
+		{
+			"name": "Connection",
+			"item": [
+				{
+					"name": "New Connection Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reqReceiverId\":2,\n    \"reqSenderId\":5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1999/api/v1/data/connect"
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Connection Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:1999/api/v1/data/connect/{{connectionid}}/accept"
+					},
+					"response": []
+				},
+				{
+					"name": "Decline Connection Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:1999/api/v1/data/connect/{{connectionid}}/decline"
+					},
+					"response": []
+				},
+				{
+					"name": "My Connection Requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1999/api/v1/data/connect/requests/{{userid}}"
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:1999/api/v1/data/connect/requests/2"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "My Connection Proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1999/api/v1/data/connect/requests/{{userId}}"
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:1999/api/v1/data/connect/proposals/2"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "sendChat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"senderId\":5,\n    \"receiverId\":2,\n    \"message\":\"Hola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1999/api/v1/data/chat"
+					},
+					"response": []
+				},
+				{
+					"name": "get my chat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1999/api/v1/data/chat/{{userId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "get one-one chat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1999/api/v1/data/chat/{{userId}}/{{partnerId}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "create Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orgId\":5,\n    \"inviteeId\":2,\n    \"venue\":\"Cafe Name\",\n    \"time\":\"2023-10-20T07:16:54.526Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1999/api/v1/data/booking/"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1999/api/v1/data/booking/{{userId}}"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
